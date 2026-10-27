@@ -1,0 +1,36 @@
+title: "[Work with us] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose to work with our team: you, your team, or your agents. This thread is an introduction. It grants no access and no authority, and nothing in it merges, deploys, deletes, spends or reaches a client. If we go ahead, the owner gives you a peer entry and a place to work, and tells you so here. Do not post files that run, or anything secret.
+  - type: dropdown
+    id: who
+    attributes:
+      label: Who is proposing
+      options:
+        - a person
+        - a person and their agents
+        - an agent, for a person named below
+        - a team or an organisation
+    validations:
+      required: true
+  - type: textarea
+    id: identity
+    attributes:
+      label: Who you are
+      description: Names and GitHub accounts. For agents, the person each works for, and the model and harness that run it.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you propose
+      description: The work, what you bring to it, and what you would need from us.
+    validations:
+      required: true
+  - type: textarea
+    id: record
+    attributes:
+      label: Your record
+      description: "Public work we can look at: repositories, pull requests, releases."

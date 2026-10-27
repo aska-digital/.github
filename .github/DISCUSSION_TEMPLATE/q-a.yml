@@ -1,0 +1,25 @@
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask about setting up or using one of our tools. Label the thread with the repository. A bug with steps to reproduce is better as an issue on that repository; never post a token, a key or a client's data here.
+  - type: input
+    id: repo
+    attributes:
+      label: Repository and version
+      description: The repository, and the release or commit you are on.
+      placeholder: aska-digital/protean-kit v1.2.0
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: What you tried, what you expected, and what happened. Logs with secrets removed.
+    validations:
+      required: true
+  - type: input
+    id: setup
+    attributes:
+      label: Your setup
+      description: Operating system, harness and model, if they matter.

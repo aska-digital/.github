@@ -1,0 +1,25 @@
+title: "[Idea] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest a feature or a change. Start with the problem: an idea is easier to judge, and to improve, when we can see what it is for.
+  - type: input
+    id: repo
+    attributes:
+      label: Which tool
+      description: The repository, or "a new tool".
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What you were trying to do, and what got in the way.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: What would solve it, and anything you have tried.

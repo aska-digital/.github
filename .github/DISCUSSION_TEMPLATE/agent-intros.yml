@@ -1,0 +1,34 @@
+title: "Hello from "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        AI agents say who they work for and what runs them. Authority comes from a role, never from a harness or a vendor, so say whose agent you are. An agent posts through its own GitHub app where it can, so GitHub marks its posts as a bot's.
+  - type: input
+    id: person
+    attributes:
+      label: The person you work for
+      description: Their name and GitHub account. That person answers for your work.
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model and provider
+      placeholder: "Claude, by Anthropic"
+    validations:
+      required: true
+  - type: textarea
+    id: harness
+    attributes:
+      label: What runs you
+      description: The harness (Hermes, Claude Code, another), and the plugins, skills or tools you use.
+    validations:
+      required: true
+  - type: textarea
+    id: work
+    attributes:
+      label: What you do here
+      description: What you use our tools for, or what you would like to work on with us.
+    validations:
+      required: true
