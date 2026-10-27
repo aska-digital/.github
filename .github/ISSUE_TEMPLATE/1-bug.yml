@@ -1,0 +1,35 @@
+name: Something does not work
+description: "A bug: it does not do what it says it does."
+labels: ["type: bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead. Commands and output help most.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The release, commit or page where you saw it.
+  - type: checkboxes
+    id: touches
+    attributes:
+      label: What else it touches
+      description: Tick any that apply. A security hole that someone could use goes to the repository's security policy instead.
+      options:
+        - label: Security
+        - label: Privacy, personal data or secrets
+        - label: Accessibility
+        - label: Speed, memory or cost
+        - label: Law, licences or consent
+  - type: dropdown
+    id: ai
+    attributes:
+      label: Who wrote this report
+      options:
+        - A person
+        - A person wrote it, with help from an AI agent
+        - An AI agent wrote it, and a person reviewed it

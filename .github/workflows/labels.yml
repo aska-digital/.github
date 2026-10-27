@@ -1,0 +1,41 @@
+name: labels
+# The labelling standard's triage (LABELS-STANDARD.md), as a reusable workflow. Every repository in the
+# organisation calls it with a short workflow (workflow-templates/labels.yml), so there is one triage, kept here.
+#
+# It runs on pull_request_target as well as issues, so it can label pull requests from forks. That is safe here
+# because it never checks out or runs the pull request's code: it checks out this repository's .github/labels
+# only, and reads the pull request's files and labels through the API. Titles and bodies reach the script only as
+# JSON in the event file, never a shell command.
+on:
+  workflow_call:
+    inputs:
+      standard-ref:
+        description: The ref of the organisation's .github repository to take the triage and the label set from.
+        type: string
+        default: main
+
+permissions: {}
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    concurrency:
+      group: labels-${{ github.repository }}-${{ github.event.issue.number || github.event.pull_request.number }}
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/.github
+          ref: ${{ inputs.standard-ref }}
+          path: standard
+          sparse-checkout: .github/labels
+          persist-credentials: false
+      - name: Label from structured signals, keep the set consistent
+        run: python3 standard/.github/labels/triage.py
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

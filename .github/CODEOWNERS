@@ -1,0 +1,13 @@
+# The forum: a rule or a category changes only with the owner's approval.
+/FORUM.md @ahrazzle
+/FORUM-STANDARD.md @ahrazzle
+/.github/forum/ @ahrazzle
+/.github/DISCUSSION_TEMPLATE/ @ahrazzle
+/.github/workflows/forum.yml @ahrazzle
+# The labelling standard: a dimension, a label or a repository's properties change only with the same approval.
+/LABELS-STANDARD.md @ahrazzle
+/.github/labels/ @ahrazzle
+/.github/ISSUE_TEMPLATE/ @ahrazzle
+/.github/pull_request_template.md @ahrazzle
+/.github/workflows/labels.yml @ahrazzle
+/workflow-templates/ @ahrazzle

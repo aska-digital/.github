@@ -1,0 +1,6 @@
+{
+  "name": "Labels",
+  "description": "Label issues and pull requests under the organisation's labelling standard, from structured signals only.",
+  "iconName": "octicon tag",
+  "categories": ["Automation"]
+}

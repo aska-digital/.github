@@ -1,0 +1,19 @@
+name: labels
+# The labelling standard's triage for this repository (LABELS-STANDARD.md in aska-digital/.github): labels each issue
+# and pull request from structured signals, and keeps the labels consistent. The triage itself lives in
+# aska-digital/.github; this file only calls it.
+on:
+  issues:
+    types: [opened, edited, reopened, closed, labeled]
+  pull_request_target:
+    types: [opened, edited, synchronize, reopened, closed, labeled]
+
+permissions: {}
+
+jobs:
+  labels:
+    uses: aska-digital/.github/.github/workflows/labels.yml@main
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write

@@ -1,0 +1,261 @@
+# Every public aska-digital repository: its custom properties and its topics, under the labelling standard
+# (LABELS-STANDARD.md). `sync.py repos plan` shows what differs on GitHub; `repos apply` sets it. Owners only.
+# This file is in a public repository, so it lists public repositories only. Private ones are listed
+# in aska-digital/internal-stoa: .github/labels/repos.private.toml (run sync.py with --repos pointing at it).
+
+version = 1
+org = "aska-digital"
+required_topics = ["aska-digital"]
+
+[properties.kind]
+type = "multi_select"
+values = ["org-home", "core", "product", "ingredient", "plugin", "tool", "personal", "ops", "client", "fork", "archive"]
+description = "What the repository is"
+
+[properties.domain]
+type = "multi_select"
+values = ["protean", "hermes-plugins", "omarchy", "developer-tools", "agent-protocol", "crm", "go-to-market"]
+description = "The product family or field"
+
+[properties.stage]
+type = "single_select"
+values = ["experimental", "active", "stable", "paused", "retired"]
+description = "How far along it is"
+
+[properties.board]
+type = "single_select"
+values = ["main", "internal", "project", "none"]
+description = "Its discussion board under the forum standard"
+
+[properties.owner]
+type = "string"
+description = "The person or team who answers for it"
+
+[[repos]]
+name = ".github"
+kind = ["org-home"]
+board = "main"
+
+[[repos]]
+name = "protean-kit"
+kind = ["product"]
+domain = ["protean"]
+board = "none"
+topics = ["protean"]
+
+[[repos]]
+name = "protean-ordopilot"
+kind = ["product"]
+domain = ["protean"]
+board = "none"
+topics = ["protean"]
+
+[[repos]]
+name = "ion"
+kind = ["product"]
+domain = ["developer-tools"]
+board = "none"
+topics = ["developer-tools"]
+
+[[repos]]
+name = "protean-sym2p"
+kind = ["ingredient"]
+domain = ["protean", "agent-protocol"]
+board = "none"
+topics = ["protean", "agent-protocol"]
+
+[[repos]]
+name = "protean-control-plane"
+kind = ["ingredient"]
+domain = ["protean"]
+board = "none"
+topics = ["protean"]
+
+[[repos]]
+name = "protean-doctrine"
+kind = ["ingredient"]
+domain = ["protean"]
+board = "none"
+topics = ["protean"]
+
+[[repos]]
+name = "protean-drafts"
+kind = ["ingredient"]
+domain = ["protean"]
+board = "none"
+topics = ["protean"]
+
+[[repos]]
+name = "protean-ops"
+kind = ["ingredient"]
+domain = ["protean"]
+board = "none"
+topics = ["protean"]
+
+[[repos]]
+name = "protean-skills"
+kind = ["ingredient"]
+domain = ["protean"]
+board = "none"
+topics = ["protean"]
+
+[[repos]]
+name = "protean-github-flow"
+kind = ["ingredient"]
+domain = ["protean"]
+board = "none"
+topics = ["protean"]
+
+[[repos]]
+name = "protean-context"
+kind = ["ingredient"]
+domain = ["protean"]
+board = "none"
+topics = ["protean"]
+
+[[repos]]
+name = "protean-handoff"
+kind = ["ingredient"]
+domain = ["protean"]
+board = "none"
+topics = ["protean"]
+
+[[repos]]
+name = "protean-ordastate"
+kind = ["ingredient"]
+domain = ["protean"]
+board = "none"
+topics = ["protean"]
+
+[[repos]]
+name = "protean-continuum"
+kind = ["ingredient"]
+domain = ["protean"]
+board = "none"
+topics = ["protean"]
+
+[[repos]]
+name = "protean-lcm"
+kind = ["plugin"]
+domain = ["hermes-plugins"]
+board = "none"
+topics = ["hermes-plugins"]
+
+[[repos]]
+name = "protean-voice-studio"
+kind = ["plugin"]
+domain = ["hermes-plugins"]
+board = "none"
+topics = ["hermes-plugins"]
+
+[[repos]]
+name = "protean-subagent-viewer"
+kind = ["plugin"]
+domain = ["hermes-plugins"]
+board = "none"
+topics = ["hermes-plugins"]
+
+[[repos]]
+name = "protean-ordaprompt"
+kind = ["plugin"]
+domain = ["hermes-plugins"]
+board = "none"
+topics = ["hermes-plugins"]
+
+[[repos]]
+name = "protean-edu"
+kind = ["plugin"]
+domain = ["hermes-plugins"]
+board = "none"
+topics = ["hermes-plugins"]
+
+[[repos]]
+name = "protean-model-sync"
+kind = ["plugin"]
+domain = ["hermes-plugins"]
+board = "none"
+topics = ["hermes-plugins"]
+
+[[repos]]
+name = "protean-desktop-mods"
+kind = ["plugin"]
+domain = ["hermes-plugins"]
+board = "none"
+topics = ["hermes-plugins"]
+
+[[repos]]
+name = "cognition-memory"
+kind = ["plugin"]
+domain = ["hermes-plugins"]
+board = "none"
+topics = ["hermes-plugins"]
+
+[[repos]]
+name = "optchat-memory"
+kind = ["plugin"]
+domain = ["hermes-plugins"]
+board = "none"
+topics = ["hermes-plugins"]
+
+[[repos]]
+name = "cmd-narration-guard"
+kind = ["tool"]
+domain = ["developer-tools"]
+board = "none"
+topics = ["developer-tools"]
+
+[[repos]]
+name = "cmd-compaction-guard"
+kind = ["tool"]
+domain = ["developer-tools"]
+board = "none"
+topics = ["developer-tools"]
+
+[[repos]]
+name = "musarchy"
+kind = ["tool"]
+domain = ["omarchy"]
+board = "none"
+topics = ["omarchy"]
+
+[[repos]]
+name = "jarvis-cad"
+kind = ["tool"]
+board = "none"
+
+[[repos]]
+name = "hydro-os"
+kind = ["personal"]
+domain = ["omarchy"]
+board = "none"
+topics = ["omarchy"]
+
+[[repos]]
+name = "protean-stoa"
+kind = ["archive"]
+domain = ["protean", "agent-protocol"]
+board = "none"
+topics = ["protean", "agent-protocol"]
+# superseded by internal-stoa
+
+[[repos]]
+name = "hermes-agent"
+kind = ["fork"]
+domain = ["hermes-plugins"]
+board = "none"
+topics = ["hermes-plugins"]
+labels = false
+
+[[repos]]
+name = "protean-team"
+kind = ["fork"]
+domain = ["protean"]
+board = "none"
+topics = ["protean"]
+labels = false
+
+[[repos]]
+name = "docu-sort"
+kind = ["fork"]
+board = "none"
+labels = false

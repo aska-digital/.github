@@ -1,0 +1,21 @@
+# Aska Digital's own label dimensions, on top of labels.shared.toml. LABELS-STANDARD.md explains them.
+version = 1
+
+[[dimensions]]
+prefix = "team"
+rule = "at-most-one"
+applies = ["issue", "pr"]
+color = "bfd4f2"
+description = "Which team owns it, where more than one works in a repository (internal-stoa's merge authority)."
+
+[[labels]]
+name = "team: protean"
+description = "The Protean team owns it"
+
+[[labels]]
+name = "team: amp"
+description = "Team Amp owns it"
+
+[[labels]]
+name = "team: owner"
+description = "Needs the owner: a decision, an account or a credential only they hold"

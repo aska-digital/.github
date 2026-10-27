@@ -1,0 +1,26 @@
+name: labels-check
+# On a change to the label set or its tools: the manifests are sound, the forms' answers all mean a label, and
+# the tests pass. No network.
+on:
+  pull_request:
+    paths: ['.github/labels/**', '.github/ISSUE_TEMPLATE/**', '.github/pull_request_template.md', '.github/workflows/labels*.yml']
+  push:
+    branches: [main]
+    paths: ['.github/labels/**', '.github/ISSUE_TEMPLATE/**', '.github/pull_request_template.md', '.github/workflows/labels*.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: python3 .github/labels/sync.py check
+      - run: python3 .github/labels/test_sync.py
+      - run: python3 .github/labels/test_triage.py
+      - run: python3 .github/labels/test_templates.py

@@ -1,0 +1,34 @@
+name: A new feature or a change
+description: Something it should do, or do differently.
+labels: ["type: feature"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What you were trying to do, and what got in the way.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would solve it
+  - type: checkboxes
+    id: touches
+    attributes:
+      label: What else it touches
+      options:
+        - label: Breaks something people may depend on
+        - label: Security
+        - label: Privacy, personal data or secrets
+        - label: Accessibility
+        - label: Speed, memory or cost
+        - label: Law, licences or consent
+  - type: dropdown
+    id: ai
+    attributes:
+      label: Who wrote this request
+      options:
+        - A person
+        - A person wrote it, with help from an AI agent
+        - An AI agent wrote it, and a person reviewed it

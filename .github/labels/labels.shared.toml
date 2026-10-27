@@ -1,0 +1,326 @@
+# The labels every issue and pull request in all three organisations can carry: Foundation-0, Proven-Commons
+# and aska-digital. This file is the same, word for word, in each organisation's .github repository; a change
+# is made in all three at once. LABELS-STANDARD.md explains each dimension and when to use it.
+#
+# A label is "<prefix>: <value>". A dimension's rule says how many of its labels one item may carry:
+# one (exactly one), at-most-one, or any. The organisation adds its own dimensions in labels.toml; a
+# repository adds only area: labels, in its own .github/labels.toml.
+version = 1
+
+[[dimensions]]
+prefix = "type"
+rule = "one"
+applies = ["issue", "pr"]
+color = "1d76db"
+description = "What kind of work it is. Every issue and pull request has exactly one."
+
+[[dimensions]]
+prefix = "status"
+rule = "at-most-one"
+applies = ["issue", "pr"]
+color = "fbca04"
+description = "Why it is waiting, if it is. None means it is moving. GitHub already shows draft, review and merge states."
+
+[[dimensions]]
+prefix = "priority"
+rule = "at-most-one"
+applies = ["issue", "pr"]
+color = "d93f0b"
+description = "How soon it matters. Most items carry none; set it when the answer is not 'when someone gets to it'."
+
+[[dimensions]]
+prefix = "concern"
+rule = "any"
+applies = ["issue", "pr"]
+color = "5319e7"
+description = "What else it touches, which needs a second look from someone who knows it."
+
+[[dimensions]]
+prefix = "source"
+rule = "at-most-one"
+applies = ["issue", "pr"]
+color = "c5def5"
+description = "Where it came from, when that is not a person simply noticing it."
+
+[[dimensions]]
+prefix = "ai"
+rule = "at-most-one"
+applies = ["issue", "pr"]
+color = "0e8a16"
+description = "What an AI agent did. Credit both strands: say it, rather than leave readers to guess."
+
+[[dimensions]]
+prefix = "resolution"
+rule = "at-most-one"
+applies = ["issue", "pr"]
+color = "cfd3d7"
+description = "Why it was closed without being done. Issues also have GitHub's close reason; PRs do not."
+
+[[dimensions]]
+prefix = "size"
+rule = "at-most-one"
+applies = ["pr"]
+color = "ededed"
+description = "Lines added and removed. Set by the triage bot on every push; review time follows it."
+
+[[dimensions]]
+prefix = "area"
+rule = "any"
+applies = ["issue", "pr"]
+color = "c2e0c6"
+description = "Which part of the repository. Each repository defines its own, in .github/labels.toml."
+
+# ---------------------------------------------------------------- type
+
+[[labels]]
+name = "type: bug"
+description = "Something does not work as it says it does"
+form = ["Fixes something that does not work", "Bug report"]
+
+[[labels]]
+name = "type: feature"
+description = "A new capability, or a change in behaviour"
+form = ["Adds or changes behaviour", "Feature request"]
+
+[[labels]]
+name = "type: docs"
+description = "Documentation only"
+form = ["Documentation only", "Documentation"]
+
+[[labels]]
+name = "type: chore"
+description = "Upkeep with no change in behaviour: dependencies, CI, tooling, refactors"
+form = ["Upkeep: dependencies, CI, tooling or a refactor"]
+
+[[labels]]
+name = "type: research"
+description = "A result, a proof, a replay or an analysis: work that makes a claim"
+form = ["A research result: a proof, a check, a replay or an analysis"]
+
+[[labels]]
+name = "type: question"
+description = "A question to answer before work can start. Open-ended questions go to the forum's Q&A"
+
+[[labels]]
+name = "type: tracking"
+description = "An index of other issues: an audit, an epic, a plan. Closes when they do"
+
+# ---------------------------------------------------------------- status
+
+[[labels]]
+name = "status: needs triage"
+description = "New: nobody has looked at it yet"
+
+[[labels]]
+name = "status: needs info"
+description = "Waiting on the author for details or a reproduction"
+
+[[labels]]
+name = "status: needs decision"
+description = "Waiting on a call by someone with the authority to make it"
+
+[[labels]]
+name = "status: needs admin"
+description = "Waiting on an owner or admin to change a setting"
+
+[[labels]]
+name = "status: blocked"
+description = "Waiting on other work; the issue links it"
+
+[[labels]]
+name = "status: ready"
+description = "Triaged and agreed: anyone may pick it up"
+
+[[labels]]
+name = "status: in progress"
+description = "Someone has picked it up (a pull request uses draft instead)"
+
+# ---------------------------------------------------------------- priority
+
+[[labels]]
+name = "priority: p0"
+color = "b60205"
+description = "Drop other work: harm is happening now"
+
+[[labels]]
+name = "priority: p1"
+color = "d93f0b"
+description = "Next: before any new feature"
+
+[[labels]]
+name = "priority: p2"
+color = "e99695"
+description = "Soon: in the current cycle"
+
+[[labels]]
+name = "priority: p3"
+color = "f9d0c4"
+description = "When there is time"
+
+# ---------------------------------------------------------------- concern
+
+[[labels]]
+name = "concern: security"
+description = "Could let someone do what they should not. Exploitable details go to the security policy"
+form = ["Security"]
+
+[[labels]]
+name = "concern: privacy"
+description = "Personal data, secrets, or details that should not be public"
+form = ["Privacy, personal data or secrets"]
+
+[[labels]]
+name = "concern: accessibility"
+description = "A barrier for people with disabilities"
+form = ["Accessibility"]
+
+[[labels]]
+name = "concern: performance"
+description = "Speed, memory or cost"
+form = ["Speed, memory or cost"]
+
+[[labels]]
+name = "concern: compliance"
+description = "Law, licence or policy: consent, attribution, terms"
+form = ["Law, licences or consent"]
+
+[[labels]]
+name = "concern: breaking"
+description = "Changes behaviour that someone may depend on; needs a note in the release"
+form = ["Breaks something people may depend on"]
+
+# ---------------------------------------------------------------- source
+
+[[labels]]
+name = "source: audit"
+description = "Found by an audit or a review of the whole repository"
+
+[[labels]]
+name = "source: review"
+description = "Raised in review of a pull request, and split out to fix on its own"
+
+[[labels]]
+name = "source: report"
+description = "Reported by someone outside the team"
+
+[[labels]]
+name = "source: forum"
+description = "Started as a forum thread; the issue links it"
+
+[[labels]]
+name = "source: contribution"
+description = "A pull request from someone outside the team"
+
+[[labels]]
+name = "source: incident"
+description = "Came out of something going wrong in use"
+
+# ---------------------------------------------------------------- ai
+
+[[labels]]
+name = "ai: authored"
+description = "An AI agent wrote it; a named person reviewed it"
+form = ["An AI agent wrote it, and a person reviewed it"]
+
+[[labels]]
+name = "ai: assisted"
+description = "A person wrote it with help from an AI agent"
+form = ["A person wrote it, with help from an AI agent"]
+
+# ---------------------------------------------------------------- resolution
+
+[[labels]]
+name = "resolution: duplicate"
+description = "Already covered by another issue or pull request, which it links"
+
+[[labels]]
+name = "resolution: invalid"
+description = "Not a problem, or not about this repository"
+
+[[labels]]
+name = "resolution: wontfix"
+description = "Understood, and deliberately not done; the reason is in the thread"
+
+[[labels]]
+name = "resolution: superseded"
+description = "Replaced by later work, which it links"
+
+# ---------------------------------------------------------------- size (the triage bot sets these)
+
+[[labels]]
+name = "size: xs"
+description = "Up to 10 lines changed"
+
+[[labels]]
+name = "size: s"
+description = "11 to 50 lines changed"
+
+[[labels]]
+name = "size: m"
+description = "51 to 250 lines changed"
+
+[[labels]]
+name = "size: l"
+description = "251 to 1000 lines changed"
+
+[[labels]]
+name = "size: xl"
+description = "More than 1000 lines changed: consider splitting it"
+
+# ---------------------------------------------------------------- GitHub's own names, kept exactly
+
+[[labels]]
+name = "good first issue"
+fixed = true
+color = "7057ff"
+description = "A small, well-described task for someone new. GitHub lists these for newcomers"
+
+[[labels]]
+name = "help wanted"
+fixed = true
+color = "008672"
+description = "The team would welcome someone taking this on. GitHub lists these for contributors"
+
+# ---------------------------------------------------------------- old names, renamed so issues keep them
+
+[renames]
+"bug" = "type: bug"
+"enhancement" = "type: feature"
+"documentation" = "type: docs"
+"question" = "type: question"
+"needs decision" = "status: needs decision"
+"needs admin" = "status: needs admin"
+"duplicate" = "resolution: duplicate"
+"invalid" = "resolution: invalid"
+"wontfix" = "resolution: wontfix"
+"security" = "concern: security"
+"accessibility" = "concern: accessibility"
+"audit" = "source: audit"
+
+# ---------------------------------------------------------------- what the triage bot reads from a pull request
+
+# Upper bounds, in lines added plus removed, for each size: label.
+[size]
+xs = 10
+s = 50
+m = 250
+l = 1000
+xl = 1000000000
+
+# A pull request whose changed files all match ("all") or any match ("any") gets the label, unless its
+# dimension already has one. A repository adds its own as `paths` on its area: labels.
+[[path_rules]]
+label = "type: docs"
+when = "all"
+paths = ["**/*.md", "**/*.rst", "**/*.txt", "docs/**", "**/LICENSE*", "**/NOTICE*", "**/CITATION.cff"]
+
+[[path_rules]]
+label = "type: chore"
+when = "all"
+paths = [".github/**", "**/.gitignore", "**/.gitattributes", "**/requirements*.txt", "**/package-lock.json", "**/*.lock", "**/lake-manifest.json", "**/lean-toolchain", "**/.pre-commit-config.yaml", "**/.editorconfig"]
+
+[[path_rules]]
+label = "concern: security"
+when = "any"
+paths = [".github/workflows/**", "**/CODEOWNERS", "**/SECURITY.md", "**/githooks/**"]
+
